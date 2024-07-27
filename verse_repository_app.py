@@ -1,5 +1,5 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Header, Footer, DirectoryTree, TextArea, Button, Checkbox
+from textual.widgets import Header, Footer, DirectoryTree, TextArea, Button
 from textual.containers import Horizontal, Vertical
 import pyperclip
 import os
@@ -15,18 +15,11 @@ class VerseRepositoryApp(App):
         height: 100%;
     }
     #editor {
-        height: 90%;
+        height: 95%;
     }
     #copy_button {
         dock: bottom;
         width: 100%;
-    }
-    #wrap_checkbox {
-        margin: 1 1;
-    }
-    #controls {
-        height: 3;
-        dock: top;
     }
     """
 
@@ -44,10 +37,6 @@ class VerseRepositoryApp(App):
         yield Horizontal(
             DirectoryTree("./verse", id="file_tree"),
             Vertical(
-                Horizontal(
-                    Checkbox("Word Wrap", id="wrap_checkbox"),
-                    id="controls"
-                ),
                 TextArea(id="editor"),
                 Button("Copy to Clipboard", id="copy_button", variant="primary"),
                 id="editor_container"
@@ -75,10 +64,6 @@ class VerseRepositoryApp(App):
         content = self.query_one(TextArea).text
         pyperclip.copy(content)
         self.notify("Content copied to clipboard!")
-
-    def on_checkbox_changed(self, event: Checkbox.Changed):
-        text_area = self.query_one(TextArea)
-        text_area.wrap = event.value
 
     def action_quit(self):
         self.exit()
