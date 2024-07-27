@@ -1,5 +1,5 @@
 # Verse Console
-### App By Lil Wikipedia
+Lil Wikipedia aka Cruz Wootten
 
 ***
 
