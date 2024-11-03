@@ -1,3 +1,4 @@
+
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
@@ -5,7 +6,17 @@ block_cipher = None
 a = Analysis(['verse_repository_app.py'],
              pathex=[],
              binaries=[],
-             datas=[('verse', 'snippets')],
+             datas=[
+                 ('verse', 'verse'),
+                 ('verse/docs', 'verse/docs'),
+                 ('verse/snippets', 'verse/snippets'),
+                 ('verse/snippets/Game', 'verse/snippets/Game'),
+                 ('verse/snippets/Helper Scripts', 'verse/snippets/Helper Scripts'),
+                 ('verse/snippets/Object', 'verse/snippets/Object'),
+                 ('verse/snippets/Player', 'verse/snippets/Player'),
+                 ('verse/snippets/UI', 'verse/snippets/UI'),
+                 ('verse/snippets/Game/Sets', 'verse/snippets/Game/Sets'),
+             ],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
@@ -15,14 +26,14 @@ a = Analysis(['verse_repository_app.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-pyz = PYZ(a.pure, a.zipped_data,
-          cipher=block_cipher)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(pyz,
-          a.scripts, 
+          a.scripts,
           [],
           exclude_binaries=True,
-          name='VerseRepositoryApp',
+          name='VerseConsoleHelper',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -36,8 +47,8 @@ exe = EXE(pyz,
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
-               a.datas, 
+               a.datas,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='VerseRepositoryApp')
+               name='VerseConsoleHelper')
