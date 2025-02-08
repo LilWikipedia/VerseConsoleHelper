@@ -1,10 +1,10 @@
-#define MyAppName "VerseConsoleHelper"
-#define MyAppVersion "2.0"
-#define MyAppPublisher "Lil Wikipedia"
+#define MyAppName "Verse Console Helper"
+#define MyAppVersion "5.0.2.8.25"
+#define MyAppPublisher "LilWikipediaFN"
 #define MyAppExeName "VerseConsoleHelper.exe"
 
 [Setup]
-AppId={{1917574c-bb7e-479c-8a68-1ba4910363c4}
+AppId={{68611449-dbf4-4d8d-9d85-9f48fb8ec6cc}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
@@ -24,7 +24,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "dist\VerseConsoleHelper\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "dist\verse_console_helper\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
